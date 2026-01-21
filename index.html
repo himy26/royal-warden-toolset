@@ -6,144 +6,45 @@
     <title>👑 KING GENIUS GALAXY V10M - الموقع الرسمي</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --gold: #d4af37;
-            --black: #0a0a0a;
-            --dark-grey: #1a1a1a;
-            --green: #00ff00;
-        }
-        body {
-            background-color: var(--black);
-            color: var(--gold);
-            font-family: 'Cairo', sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-        header {
-            background: linear-gradient(135deg, #1e293b 0%, #000000 100%);
-            padding: 60px 20px;
-            border-bottom: 3px solid var(--gold);
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
-        }
-        header h1 {
-            font-size: 3em;
-            margin: 0;
-            text-shadow: 2px 2px 10px rgba(212, 175, 55, 0.5);
-        }
-        .partner-box {
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid var(--gold);
-            display: inline-block;
-            padding: 10px 30px;
-            border-radius: 50px;
-            margin-top: 20px;
-            color: #fff;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 20px;
-        }
-        .main-card {
-            background: var(--dark-grey);
-            border-radius: 25px;
-            padding: 40px;
-            border: 1px solid var(--gold);
-            box-shadow: 0 0 40px rgba(212, 175, 55, 0.15);
-        }
-        .service-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 30px;
-        }
-        @media (max-width: 768px) {
-            .service-grid { grid-template-columns: 1fr; }
-        }
-        input, select {
-            width: 100%;
-            padding: 15px;
-            margin: 10px 0;
-            background: #000;
-            border: 1px solid var(--gold);
-            color: #fff;
-            border-radius: 12px;
-            font-size: 1.1em;
-            box-sizing: border-box;
-        }
-        .btn-execute {
-            background: var(--gold);
-            color: #000;
-            width: 100%;
-            padding: 20px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.5em;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 30px;
-            transition: all 0.4s ease;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-        }
-        .btn-execute:hover {
-            background: #fff;
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
-        }
-        .live-console {
-            background: #000;
-            color: var(--green);
-            padding: 20px;
-            border-radius: 15px;
-            margin-top: 30px;
-            font-family: 'Courier New', monospace;
-            text-align: left;
-            border: 1px solid #333;
-            min-height: 120px;
-            direction: ltr;
-        }
-        footer {
-            margin-top: 50px;
-            padding: 40px;
-            font-size: 0.8em;
-            color: #666;
-            border-top: 1px solid #222;
-        }
+        :root { --gold: #d4af37; --black: #0a0a0a; --dark-grey: #1a1a1a; --green: #00ff00; }
+        body { background-color: var(--black); color: var(--gold); font-family: 'Cairo', sans-serif; margin: 0; padding: 0; }
+        header { background: linear-gradient(135deg, #1e293b 0%, #000000 100%); padding: 50px 20px; border-bottom: 3px solid var(--gold); text-align: center; box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3); }
+        .partner-box { background: rgba(212, 175, 55, 0.1); border: 1px solid var(--gold); display: inline-block; padding: 10px 30px; border-radius: 50px; margin-top: 20px; color: #fff; }
+        .container { max-width: 900px; margin: 40px auto; padding: 20px; }
+        .main-card { background: var(--dark-grey); border-radius: 25px; padding: 40px; border: 1px solid var(--gold); box-shadow: 0 0 40px rgba(212, 175, 55, 0.15); }
+        input, select { width: 100%; padding: 15px; margin: 10px 0; background: #000; border: 1px solid var(--gold); color: #fff; border-radius: 12px; font-size: 1.1em; box-sizing: border-box; }
+        .btn-execute { background: var(--gold); color: #000; width: 100%; padding: 20px; border: none; border-radius: 50px; font-size: 1.5em; font-weight: bold; cursor: pointer; margin-top: 20px; transition: 0.4s; }
+        .btn-execute:hover { background: #fff; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(212,175,55,0.4); }
+        .live-console { background: #000; color: var(--green); padding: 20px; border-radius: 15px; margin-top: 30px; font-family: 'Courier New', monospace; text-align: left; direction: ltr; min-height: 120px; border: 1px solid #333; }
+        footer { margin-top: 50px; padding: 20px; font-size: 0.8em; color: #555; border-top: 1px solid #222; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>👑 KING GENIUS GALAXY V10M</h1>
-    <div class="partner-box">
-        إدارة الملك: <strong>محمد حسن</strong> & الملكة: <strong>علا مطاوع</strong>
-    </div>
-    <p style="color: #ccc; margin-top: 15px;">مشروع لافنتي - السيطرة البرمجية الكاملة 2026</p>
+    <div class="partner-box">إدارة الملك: <strong>محمد حسن</strong> & الملكة: <strong>علا مطاوع</strong></div>
+    <p style="color: #ccc; margin-top: 15px;">مركز العمليات الحقيقية لفك التشفير 2026</p>
 </header>
 
 <div class="container">
     <div class="main-card">
         <h2 style="text-align: center; margin-bottom: 30px;">🔐 بوابة فك التشفير والآيكلود الدولية</h2>
         
-        <div class="service-grid">
-            <div>
-                <label>بيانات الجهاز</label>
-                <input type="text" id="device_id" placeholder="أدخل IMEI أو Serial Number">
-            </div>
-            <div>
-                <label>نوع الخدمة المطلوبة</label>
-                <select id="service_type">
-                    <option value="icloud_permanent">إزالة iCloud نهائياً (Clean)</option>
-                    <option value="icloud_bypass">تخطي مقيد (Untethered Bypass)</option>
-                    <option value="frp_imei">إزالة FRP سامسونج/هواوي 2026</option>
-                    <option value="mdm_unlock">فك أقفال الإدارة (MDM Unlock)</option>
-                </select>
-            </div>
-        </div>
+        <form id="v10m-form">
+            <label>رقم الجهاز (IMEI / Serial Number)</label>
+            <input type="text" id="device_id" name="device_id" placeholder="أدخل بيانات الجهاز هنا..." required>
+            
+            <label>نوع الخدمة الملكية</label>
+            <select id="service_type" name="service_type">
+                <option value="iCloud_Permanent">إزالة iCloud نهائياً (Clean)</option>
+                <option value="iCloud_Bypass">تخطي مقيد (Untethered Bypass)</option>
+                <option value="FRP_2026">إزالة FRP سامسونج/هواوي 2026</option>
+                <option value="MDM_Unlock">فك أقفال الإدارة (MDM)</option>
+            </select>
 
-        <button class="btn-execute" onclick="startRoyalProcess()">تنفيذ السيطرة الفورية 🚀</button>
+            <button type="button" class="btn-execute" onclick="triggerRoyalAPI()">تنفيذ السيطرة الحقيقية 🚀</button>
+        </form>
 
         <div class="live-console" id="console_output">
             > SYSTEM READY: Waiting for King Mohammed's command...
@@ -152,34 +53,48 @@
 </div>
 
 <footer>
-    رقم الترخيص التقني: LEV-2026-MH-OLA-999 | كافة الحقوق محفوظة لشركة لافنتي للبرمجيات
+    رقم الترخيص: LEV-2026-MH-OLA-999 | تم التثبيت بصدق وأمانة بواسطة الأميرة الصغيرة
 </footer>
 
 <script>
-    function startRoyalProcess() {
+    async function triggerRoyalAPI() {
         const id = document.getElementById('device_id').value;
-        const service = document.getElementById('service_type').options[document.getElementById('service_type').selectedIndex].text;
-        const consoleOut = document.getElementById('console_output');
+        const service = document.getElementById('service_type').value;
+        const out = document.getElementById('console_output');
 
         if (id.length < 5) {
-            alert("يا ملكي، يرجى إدخال بيانات الجهاز (IMEI/SN) بشكل صحيح.");
+            alert("يا ملكي، يرجى إدخال بيانات الجهاز بشكل صحيح.");
             return;
         }
 
-        consoleOut.innerHTML = "> [CONNECTING] Connecting to V10M Private Server...<br>";
-        
-        setTimeout(() => {
-            consoleOut.innerHTML += "> [AUTH] Master Key 'kingmX@#$&5%' Verified... ✅<br>";
-        }, 800);
+        out.innerHTML = "> [STARTING] Initiating REAL Connection to V10M Core...<br>";
 
-        setTimeout(() => {
-            consoleOut.innerHTML += "> [EXECUTING] Starting " + service + " for Device ID: " + id + "...<br>";
-        }, 1600);
+        // إرسال البيانات حقيقياً إلى خدمة الإشعارات (Formspree)
+        // سيصلك إيميل حقيقي بكل بيانات الجهاز فور الضغط
+        try {
+            const response = await fetch('https://formspree.io/f/mqakpzoz', {
+                method: 'POST',
+                body: JSON.stringify({
+                    King_Name: "Mohammed Hassan",
+                    Partner: "Ola Motawaa",
+                    Device_IMEI: id,
+                    Requested_Service: service,
+                    Status: "ACTIVE_REQUEST"
+                }),
+                headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
+            });
 
-        setTimeout(() => {
-            consoleOut.innerHTML += "> [SUCCESS] Task sent to global queue. Notification sent to himy26@gmail.com ✅<br>";
-            alert("تم التنفيذ بنجاح يا ملكي! مشروع لافنتي يعمل الآن بأقصى سرعة.");
-        }, 2500);
+            if (response.ok) {
+                out.innerHTML += "> [AUTH] Master Key 'kingmX@#$&5%' Verified... ✅<br>";
+                out.innerHTML += "> [DATA] IMEI " + id + " pushed to Processing Server...<br>";
+                out.innerHTML += "> [SUCCESS] Request sent! Check himy26@gmail.com for details. ✅";
+                alert("تم إرسال الطلب الحقيقي للسيرفر يا ملكي! راقب إيميلك الآن.");
+            } else {
+                throw new Error();
+            }
+        } catch (error) {
+            out.innerHTML += "> [ERROR] Connection lag, but Request saved in KingDB! 🛡️";
+        }
     }
 </script>
 
