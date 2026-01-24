@@ -1,0 +1,23 @@
+name: V10M Royal Dispatch Radar
+
+on:
+  schedule:
+    - cron: '0 * * * *' # يعمل تلقائياً كل ساعة بـ "سرعة الرعد"
+  workflow_dispatch:      # يسمح لك بتشغيله يدوياً بضغطة زر ملكية
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Execute Royal Mailer
+        env:
+          APP_PASSWORD: ${{ secrets.ROYAL_APP_PASSWORD }} # حماية كلمة السر في الخزنة
+        run: python royal_sender.py
