@@ -1,9 +1,7 @@
-name: V10M Royal Dispatch Radar
+name: Laventi Royal Sync
 
 on:
-  schedule:
-    - cron: '0 * * * *' # يعمل تلقائياً كل ساعة بـ "سرعة الرعد"
-  workflow_dispatch:      # يسمح لك بتشغيله يدوياً بضغطة زر ملكية
+  workflow_dispatch: # للتشغيل اليدوي بأمر الملك
 
 jobs:
   build:
@@ -15,9 +13,10 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
+          python-version: '3.9'
 
-      - name: Execute Royal Mailer
+      - name: Execute Royal Sender
         env:
-          APP_PASSWORD: ${{ secrets.ROYAL_APP_PASSWORD }} # حماية كلمة السر في الخزنة
+          # هنا تكمن قوة الربط بالخزنة
+          ROYAL_APP_PASSWORD: ${{ secrets.ROYAL_APP_PASSWORD }}
         run: python royal_sender.py
