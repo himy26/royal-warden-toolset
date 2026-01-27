@@ -13,7 +13,7 @@ class V10M_Sovereign_Engine:
     def fetch_royal_data(self):
         """جلب البيانات من السيرفر بنظام النبضات"""
         try:
-            print(f"🔱 جاري الاتصال بخزينة الملك: {self.server_url}...")
+            print(f" جاري الاتصال بخزينة الملك: {self.server_url}...")
             response = requests.get(self.server_url, timeout=10)
             if response.status_code == 200:
                 print("✅ تم تأسيس الاتصال الملكي بنجاح.")
