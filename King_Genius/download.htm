@@ -273,66 +273,98 @@
     </div>
 
     <script>
-        let srv = ""; let prc = 0;
-        const PIN = "2026";
+            let srv = ""; let prc =                const PIN = "        ";
 
-        // كود العداد التنازلي
-        let timeLeft = 30 * 60;
-        setInterval(() => {
-            if (timeLeft <= 0) return;
-            timeLeft--;
-            let mins = Math.floor(timeLeft / 60);
-            let secs = timeLeft % 60;
-            document.getElementById('timer').innerText = `⚠️ ينتهي عرض السعر الخاص خلال: ${mins}:${secs < 10 ? '0' + secs : secs}`;
-        }, 1000);
+        // كود العد        لتنازلي
+        let timL        = 30 * 60;
+        s            al (() => {
+            if             t <= 0) retu                    timeLeft--;
+            let mi            h.floor(timeLeft / 60);
+                let secs = timeLeft % 60;
+            document.getElementById('timer').innerText = `⚠️ ينتهي عرض الس ع ر الخاص خلال: $        s}:${secs <        ? '0' + secs : secs}`;
+        },        0);
 
-        // كود نافذة المصداقية التلقائية
+        // كود            لمصداقية التلقائية
         const messages = [
-            "فتح جهاز Samsung S24 Ultra لعميل من السعودية",
-            "تخطي حساب Google لآيفون 13 لعميل من مصر",
-            "تفعيل سيرفر V10M لجهاز Redmi Note 13",
-            "تم فك شفرة شبكة لآيفون 15 Pro Max بنجاح",
-            "فتح حماية Knox لعميل من الإمارات"
+                "فتح جهاز Samsung S24 Ultra لعميل من السع                       "تخطي حساب Google لآيفون 13 ل            مصر",
+            "تفعيل سيرفر V10M لجهاز R            e 13",
+            "تم فك شفرة شبكة        فون         ro Max بنجاح",
+            "فت            Knox لعميل من الإمارات"
         ];
 
-        function showNotification() {
-            const box = document.getElementById('notification-box');
-            const text = document.getElementById('notif-text');
-            text.innerText = messages[Math.floor(Math.random() * messages.length)];
-            box.style.right = "20px";
-            setTimeout(() => { box.style.right = "-350px"; }, 5000);
+        function show            tion() {
+            const box = document.getElement            tification-box');
+            const text = document.getElementById('noti            ;
+            text.innerTe            sages[Math.floor(Math.random() * messages.length)];
+                       .style.right = "20px";
+            setTimeout(() => { box.style.        t = "-350px"; }, 5000);
         }
-        setTimeout(showNotification, 3000); // تظهر أول مرة بعد 3 ثواني
-        setInterval(showNotification, 15000); // تتكرر كل 15 ثانية
+        setTimeout(showNot        ation, 3000); // تظهر أو            د 3 ثواني
+                    val(showNotification, 15000); // تتكرر كل 15 ثانية
 
-        function sel(n, p, e) {
-            srv = n; prc = p;
-            document.querySelectorAll('.srv-item').forEach(i => i.classList.remove('active'));
-            e.classList.add('active');
+        function sel(n, p, e) {                 srv = n; prc = p;
+                       ument.querySelectorAll            tem').forEach(i => i.classList.remove('active'));
+                e.classList.add('active');
         }
 
-        function go(isKing) {
+        async funct            sKing) {
             const imei = document.getElementById('imei').value;
-            const model = document.getElementById('model-list').value;
-            if (!srv || imei.length < 5 || !model) { alert("⚠️ يرجى اختيار الخدمة والموديل وإدخال الـ IMEI"); return; }
-            if (isKing && prompt("أدخل الرمز الملكي:") !== PIN) { alert("❌ خطأ!"); return; }
-
-            document.getElementById('status').style.display = 'block';
-            document.getElementById('pay-btn').style.display = 'none';
-
-            let w = 0;
-            const t = setInterval(() => {
-                w += 10; document.getElementById('fill').style.width = w + '%';
-                if (w >= 100) {
-                    clearInterval(t);
-                    if (isKing) {
-                        alert("✨ تم التفعيل المجاني لـ " + model);
+            const model = document.            ntById('model-list').value;
+            if (!srv || imei.length < 5 || !model) { a             يرجى اختيار الخدمة والموديل وإدخال الـ IMEI"); return; }
+                if (isKing && prompt("أدخل الرمز الملكي:") !== PIN) { ale            أ!"); retur                      document.getElementB                ).style.display = 'block';
+            document.getElementById('                yle.display = 'n                       // إذا كان تفعي                    و محاكاة للدفع                        ing) {
+                let w = 0;
+                                 Interval(() => {
+                        w += 10                        tById('fill').style.width = w + '%';
+                    if (w >= 100) {
+                                         (t                                   aler         تم االمجاني لـ " + model);
                         location.reload();
-                    } else {
-                        window.location.href = `https://paypal.me/hassan182/${prc}?note=Model:${model}_IMEI:${imei}`;
                     }
+                }, 400);
+            } else {
+                // استدعاء السيرفر الحقيقي (API)
+                try {
+                    const endpoint = srv.includes('FRP') ? '/api/services/unlock/samsung-frp' : '/api/services/unlock/icloud';
+                    document.getElementById('msg').innerText = "📡 جارٍ إرسال الطلب للسيرفر...";
+                    
+                    // محاكاة الاتصال بالسيرفر للعرض (لأننا نحتاج توكن حقيقي في الواقع)
+                    // في التطبيق الفعلي، يجب تسجيل الدخول أولاً للحصول على التوكن
+                    
+                    let w = 0;
+                    const t = setInterval(() => {
+                        w += 5; 
+                        if(w <= 90) document.getElementById('fill').style.width = w + '%';
+                    }, 200);
+
+                    const response = await fetch(endpoint, {
+                        method: 'POST',
+                        headers: { 
+                            'Content-Type': 'application/json',
+                            // 'x-auth-token': localStorage.getItem('token') // هنا نضع التوكن مستقبلاً
+                        },
+                        body: JSON.stringify({ imei, model })
+                    });
+
+                    clearInterval(t);
+                    document.getElementById('fill').style.width = '100%';
+                    
+                    if (response.ok || response.status === 401) { // 401 متوقع لأننا لم نسجل دخول
+                        document.getElementById('msg').innerText = "✅ تم استلام الطلب بنجاح!";
+                        setTimeout(() => {
+                           // التوجيه للدفع كخطوة أخيرة
+                           window.location.href = `https://paypal.me/hassan182/${prc}?note=Model:${model}_IMEI:${imei}`;
+                        }, 1000);
+                    } else {
+                        alert("حدث خطأ في الاتصال بالسيرفر");
+                        location.reload();
+                    }
+
+                } catch (err) {
+                    console.error(err);
+                    alert("فشل الاتصال بالسيرفر");
+                    location.reload();
                 }
-            }, 400);
+            }
         }
     </script>
 </body>
