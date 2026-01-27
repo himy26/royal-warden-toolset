@@ -29,8 +29,8 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/king_geni
     .catch(err => console.error('❌ MongoDB Connection Error:', err));
 
 // Routes
-app.use('/api/auth', require('./routes/auth'));
-app.use('/api/services', require('./routes/services'));
+app.use('/api/auth', require('../routes/auth'));
+app.use('/api/services', require('../routes/services'));
 
 // Base Route
 app.get('/', (req, res) => {

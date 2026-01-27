@@ -1,46 +1,13 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "server.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "King_Genius/download.htm",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/server.js"
-    },
-    {
-      "src": "/services",
-      "dest": "/King_Genius/download.htm"
-    },
-    {
-      "src": "/",
-      "dest": "/King_Genius/download.htm"
-    }
-  ],
-  "headers": [
+  "rewrites": [
     {
       "source": "/api/(.*)",
-      "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        },
-        {
-          "key": "Access-Control-Allow-Methods",
-          "value": "GET,POST,OPTIONS"
-        },
-        {
-          "key": "Access-Control-Allow-Headers",
-          "value": "Content-Type, x-auth-token"
-        }
-      ]
+      "destination": "/api/index.js"
+    },
+    {
+      "source": "/services",
+      "destination": "/King_Genius/download.htm"
     }
   ]
 }
